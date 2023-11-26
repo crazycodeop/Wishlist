@@ -1,4 +1,12 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+A full stack modern task reminder app made with Next.js, Prisma and Shadcn-ui.
+
+![image](https://github.com/crazycodeop/Wishlist/assets/85179778/454599d2-f3ae-4c22-8c3f-5dc43d885e64)
+
+![image](https://github.com/crazycodeop/Wishlist/assets/85179778/17203ffb-d319-41b5-a431-844ce9e9aba0)
+
+![image](https://github.com/crazycodeop/Wishlist/assets/85179778/bdecba6c-5833-472c-a877-cdf0e30ce298)
+
+![image](https://github.com/crazycodeop/Wishlist/assets/85179778/5288eff4-cbba-4254-bfb9-43b510ab21ad)
 
 ## Getting Started
 
