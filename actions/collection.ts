@@ -17,7 +17,7 @@ export async function createCollection(form: createCollectionSchemaType) {
     })
 }
 
-export async function deleteCollection(id: number) {
+export async function deleteCollection(id: string) {
     const user=await currentUser();
     if(!user){
         throw new Error('User not found!');
