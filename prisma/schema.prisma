@@ -5,13 +5,19 @@ generator client {
   provider = "prisma-client-js"
 }
 
+// datasource db {
+//   provider = "sqlite"
+//   url      = env("DATABASE_URL")
+// }
+
 datasource db {
-  provider = "sqlite"
+  provider = "mongodb"
   url      = env("DATABASE_URL")
 }
 
 model Collection {
-  id        Int      @id @default(autoincrement())
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  // id        Int      @id @default(autoincrement())
   name      String
   userId    String
   color     String
@@ -23,13 +29,14 @@ model Collection {
 }
 
 model Task {
-  id        Int       @id @default(autoincrement())
+  id        String    @id @default(auto()) @map("_id") @db.ObjectId
+  // id        Int       @id @default(autoincrement())
   content   String
   userId    String
   done      Boolean   @default(false)
   expiresAt DateTime?
   createdAt DateTime  @default(now())
 
-  collectionId Int
+  collectionId String     @db.ObjectId
   Collection   Collection @relation(fields: [collectionId], references: [id], onDelete: Cascade)
 }

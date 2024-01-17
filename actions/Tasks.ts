@@ -26,7 +26,7 @@ export async function createTask(data: createTaskSchemaType){
     })
 }
 
-export async function setTaskToDone(id: number) {
+export async function setTaskToDone(id: string) {
     const user = await currentUser();
 
     if (!user) {

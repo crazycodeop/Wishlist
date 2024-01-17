@@ -38,7 +38,7 @@ function Sidebar({open, onOpenChange}: Props) {
                 title: 'Success',
                 description: 'Collection created successfully!',
             })
-        } catch (error) {
+        } catch (error: any) {
             toast({
                 title: 'Error',
                 description: 'Something went wrong!',
@@ -53,7 +53,7 @@ function Sidebar({open, onOpenChange}: Props) {
     }
 
   return (
-    <Sheet open={open} onOpenChange={onOpenChange}>
+    <Sheet open={open} onOpenChange={openChangeWrapper}>
         <SheetContent>
             <SheetHeader>
                 <SheetTitle>Add new collection</SheetTitle>

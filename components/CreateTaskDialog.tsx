@@ -13,7 +13,6 @@ import { Popover, PopoverContent, PopoverTrigger } from './ui/popover';
 import { Calendar } from './ui/calendar';
 import { Button } from './ui/button';
 import { CalendarIcon, ReloadIcon } from '@radix-ui/react-icons';
-import { Span } from 'next/dist/trace';
 import { format } from 'date-fns';
 import { createTask } from '@/actions/Tasks';
 import { toast } from './ui/use-toast';
@@ -35,6 +34,7 @@ function CreateTaskDialog({open , collection, setOpen}: Props) {
     })
     const openChangeWrapper = (value: boolean) => {
         setOpen(value);
+        form.reset();
     }
 
     const onSubmit = async (data: createTaskSchemaType) => {
@@ -43,11 +43,10 @@ function CreateTaskDialog({open , collection, setOpen}: Props) {
             toast({
                 title: 'Success',
                 description: 'Task created succesfully!',
-                variant: 'destructive'
             })
             openChangeWrapper(false);
             router.refresh();
-        } catch (error) {
+        } catch (error: any) {
             toast({
                 title: 'Error',
                 description: 'Something went wrong!',

@@ -4,7 +4,6 @@ import React, { useTransition } from 'react'
 import { Checkbox } from './ui/checkbox';
 import { cn } from '@/lib/utils';
 import { format } from 'date-fns';
-import { createTaskSchema } from '@/schema/createTasks';
 import { setTaskToDone } from '@/actions/Tasks';
 import { useRouter } from 'next/navigation';
 
@@ -23,7 +22,7 @@ function TaskCard(
     const router=useRouter();
   return (
     <div className='flex gap-2 items-start'>
-      <Checkbox className='w-5 h-5' checked={task.done} 
+      <Checkbox id={task.id.toString()} className='w-5 h-5' checked={task.done} 
       disabled={task.done || isLoading}
       onCheckedChange={()=> {
         startTransition(async ()=> {
